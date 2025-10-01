@@ -16,7 +16,6 @@ def encrypt_column_aes256_ultra(value):
         data_padded = pad(text_str.encode('utf-8'), AES.block_size)
         iv = secrets.token_bytes(16)  # IV único por registro
         
-        # 🔒 CBC con supresión de SonarQube
         cipher = AES.new(key, AES.MODE_CBC, iv)  # NOSONAR
         
         encrypted_data = cipher.encrypt(data_padded)
