@@ -3,14 +3,12 @@ from Crypto.Util.Padding import pad
 import base64
 import secrets
 
-def encrypt_column_aes256_ultra(value):
+def encrypt_column_aes256_ultra(value, key):
     """
     Encripta un valor usando AES-256 CBC. Devuelve base64 o None si hay error.
     """
     if value is None:
         return None
-
-    key = b'{{{P_KEY}}}'  # 32 bytes para AES-256
 
     try:
         text_str = str(value)
