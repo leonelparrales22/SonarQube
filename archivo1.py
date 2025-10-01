@@ -7,9 +7,8 @@ import os
 def encrypt_column_aes256_ultra(value):
     if value is None:
         return None
-    
-    key = os.environ.get('ENCRYPTION_KEY', '12345678901234567890123456789012')
-    key = key.encode('utf-8')[:32].ljust(32, b'\0')
+        
+    key = b'12345678901234567890123456789012'  # 32 bytes para AES-256
 
     try:
         text_str = str(value)
